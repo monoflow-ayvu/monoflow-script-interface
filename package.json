@@ -1,25 +1,105 @@
 {
-  "name": "monoflow-script-env",
-  "version": "1.17.0",
-  "description": "Script padrão de todos os scripts. Template para criar um script.",
+  "name": "interface",
+  "version": "0.0.0",
+  "description": "Controle de interface. Definir cores, teclados, etc.",
   "settingsSchema": {
     "display": "form",
     "components": [
       {
-        "label": "Nome",
-        "description": "Nome para saludar",
+        "label": "Cor da Interface",
+        "widget": "choicesjs",
         "tableView": true,
-        "key": "nome",
-        "type": "textfield",
+        "data": {
+          "values": [
+            {
+              "label": "Padrão",
+              "value": "default"
+            },
+            {
+              "label": "Modo Dark",
+              "value": "dark"
+            },
+            {
+              "label": "Modo Light",
+              "value": "light"
+            }
+          ]
+        },
+        "key": "interfaceColor",
+        "type": "select",
         "input": true,
-        "defaultValue": "User"
+        "defaultValue": "default"
+      },
+      {
+        "label": "Estilo teclado do login",
+        "widget": "choicesjs",
+        "tableView": true,
+        "data": {
+          "values": [
+            {
+              "label": "Padrão",
+              "value": "default"
+            },
+            {
+              "label": "Numeric",
+              "value": "numeric"
+            },
+            {
+              "label": "Email",
+              "value": "email-address"
+            },
+            {
+              "label": "ASCII",
+              "value": "ascii-capable"
+            },
+            {
+              "label": "Números e Pontuação",
+              "value": "numbers-and-punctuation"
+            },
+            {
+              "label": "url",
+              "value": "url"
+            },
+            {
+              "label": "Pad Numérico",
+              "value": "number-pad"
+            },
+            {
+              "label": "Pad Telefone",
+              "value": "phone-pad"
+            },
+            {
+              "label": "Pad Telefone e Nome",
+              "value": "name-phone-pad"
+            },
+            {
+              "label": "Pad Decimal",
+              "value": "decimal-pad"
+            },
+            {
+              "label": "Twitter",
+              "value": "twitter"
+            },
+            {
+              "label": "Google (Pesquisa Web)",
+              "value": "web-search"
+            },
+            {
+              "label": "Senha Visível",
+              "value": "visible-password"
+            }
+          ]
+        },
+        "key": "loginKeyboardType",
+        "type": "select",
+        "input": true,
+        "defaultValue": "default"
       },
       {
         "type": "button",
         "label": "Submit",
         "key": "submit",
         "disableOnInvalid": true,
-        "block": true,
         "input": true,
         "tableView": false
       }
