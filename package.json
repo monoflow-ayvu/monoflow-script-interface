@@ -1,6 +1,6 @@
 {
   "name": "interface",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Controle de interface. Definir cores, teclados, etc.",
   "settingsSchema": {
     "display": "form",
