@@ -37,4 +37,9 @@ messages.on('onInit', function() {
   if (loginKeyboardType !== 'default') {
     env.setData('LOGIN_KEYBOARD_TYPE', loginKeyboardType);
   }
+
+  const doc = MonoUtils.collections.getFrotaDoc()
+  if (env.data.APP_VERSION !== doc.data.appVer) {
+    doc.set('appVer', String(env.data.APP_VERSION));
+  }
 });
