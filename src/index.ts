@@ -17,8 +17,8 @@ type Config = {
     | 'twitter'
     | 'web-search'
     | 'visible-password';
-  setVolume: boolean;
-  volume?: number; // (0-100, depends on setVolume)
+  enableVolumeControl: boolean;
+  volume?: number; // (0-100, depends on enableVolumeControl)
 }
 
 const conf = new MonoUtils.config.Config<Config>();
@@ -45,7 +45,7 @@ messages.on('onInit', function() {
     doc.set('appVer', String(env.data.APP_VERSION));
   }
 
-  if (conf.get('setVolume', false)) {
+  if (conf.get('enableVolumeControl', false)) {
     const volume = Number(conf.get('volume', 100)) / 100;
     env.setData('FORCE_VOLUME_LEVEL', volume);
   }
