@@ -50,3 +50,14 @@ messages.on('onInit', function() {
     env.setData('FORCE_VOLUME_LEVEL', volume);
   }
 });
+
+messages.on('onPeriodic', () => {
+  const pulsusId = env.data.PULSUS_ID as string;
+  if (!pulsusId) {
+    return;
+  }
+  const doc = MonoUtils.collections.getFrotaDoc();
+  if (typeof pulsusId === 'string' && doc.data?.pulsusId !== pulsusId) {
+    doc.set('pulsusId', pulsusId)
+  }
+})
