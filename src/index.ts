@@ -19,6 +19,8 @@ type Config = {
     | 'visible-password';
   enableVolumeControl: boolean;
   volume?: number; // (0-100, depends on enableVolumeControl)
+  enableBrightnessControl: boolean;
+  brightness?: number; // (0-100, depends on enableBrightnessControl)
 }
 
 const conf = new MonoUtils.config.Config<Config>();
@@ -48,6 +50,11 @@ messages.on('onInit', function() {
   if (conf.get('enableVolumeControl', false)) {
     const volume = Number(conf.get('volume', 100)) / 100;
     env.setData('FORCE_VOLUME_LEVEL', volume);
+  }
+
+  if (conf.get('enableBrightnessControl', false)) {
+    const volume = Number(conf.get('brightness', 100)) / 100;
+    env.setData('FORCE_BRIGTHNESS_LEVEL', volume);
   }
 });
 

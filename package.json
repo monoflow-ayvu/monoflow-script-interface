@@ -129,6 +129,38 @@
                 "input": true
             },
             {
+                "label": "Definir brilho da tela",
+                "tableView": false,
+                "key": "enableBrightnessControl",
+                "type": "checkbox",
+                "input": true,
+                "defaultValue": false
+            },
+            {
+                "label": "Brilho",
+                "tooltip": "0 - 100%",
+                "suffix": "%",
+                "mask": false,
+                "tableView": false,
+                "delimiter": false,
+                "requireDecimal": false,
+                "inputFormat": "plain",
+                "truncateMultipleSpaces": false,
+                "validate": {
+                    "required": true,
+                    "min": 0,
+                    "max": 100
+                },
+                "key": "brightness",
+                "conditional": {
+                    "show": true,
+                    "when": "enableBrightnessControl",
+                    "eq": "true"
+                },
+                "type": "number",
+                "input": true
+            },
+            {
                 "type": "button",
                 "label": "Submit",
                 "key": "submit",
