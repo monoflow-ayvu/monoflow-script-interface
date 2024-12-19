@@ -223,7 +223,7 @@
         "webpack-cli": "6.0.0"
     },
     "dependencies": {
-        "@fermuch/monoutils": "0.0.37",
+        "@fermuch/monoutils": "0.2.0",
         "@fermuch/telematree": "9.23.0",
         "cross-fetch": "3.1.8",
         "firebase": "9.23.0",
